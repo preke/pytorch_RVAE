@@ -51,7 +51,7 @@ if __name__ == '__main__':
         optimizer.step()
 
         if iteration % 500 == 0:
-            out = out.cpu().data.numpy()[0]
+            out = out.cpu().data.numpy()# [0]
             print('iteration = {}, loss = {}'.format(iteration, out))
 
     word_embeddings = neg_loss.input_embeddings()
