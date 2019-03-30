@@ -124,7 +124,7 @@ class BatchLoader:
             Original taken from https://github.com/yoonkim/CNN_sentence/blob/master/process_data
         '''
 
-        string = re.sub(r"[^가-힣A-Za-z0-9(),!?:;.\'\`]", " ", string)
+        string = re.sub(r"[^A-Za-z0-9(),!?:;.\'\`]", " ", string)
         string = re.sub(r"\'s", " \'s", string)
         string = re.sub(r"\'ve", " \'ve", string)
         string = re.sub(r"n\'t", " n\'t", string)
