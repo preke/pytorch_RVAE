@@ -64,6 +64,7 @@ if __name__ == "__main__":
             print('----------ITERATION-----------')
             print(iteration)
             print('--------CROSS-ENTROPY---------')
+            print(cross_entropy.data)
             print(cross_entropy.data.cpu().numpy()[0])
             print('-------------KLD--------------')
             print(kld.data.cpu().numpy()[0])
