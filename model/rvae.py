@@ -46,15 +46,16 @@ class RVAE(nn.Module):
                  final rnn state with shape of [num_layers, batch_size, decoder_rnn_size]
         """
 
-        assert parameters_allocation_check(self), \
-            'Invalid CUDA options. Parameters should be allocated in the same memory'
+        # assert parameters_allocation_check(self), \
+        #     'Invalid CUDA options. Parameters should be allocated in the same memory'
+        
         use_cuda = self.embedding.word_embed.weight.is_cuda
 
-        assert z is None and fold(lambda acc, parameter: acc and parameter is not None,
-                                  [encoder_word_input, encoder_character_input, decoder_word_input],
-                                  True) \
-            or (z is not None and decoder_word_input is not None), \
-            "Invalid input. If z is None then encoder and decoder inputs should be passed as arguments"
+        # assert z is None and fold(lambda acc, parameter: acc and parameter is not None,
+        #                           [encoder_word_input, encoder_character_input, decoder_word_input],
+        #                           True) \
+        #     or (z is not None and decoder_word_input is not None), \
+        #     "Invalid input. If z is None then encoder and decoder inputs should be passed as arguments"
 
         if z is None:
             ''' Get context from encoder and sample z ~ N(mu, std)
