@@ -55,8 +55,8 @@ class NEG_loss(nn.Module):
 
         log_target = (input * output).sum(1).squeeze().sigmoid().log()
 
-        ''' ∑[batch_size, num_sampled, embed_size] * [batch_size, embed_size, 1] ->
-            ∑[batch_size, num_sampled] -> [batch_size] '''
+        ''' [batch_size, num_sampled, embed_size] * [batch_size, embed_size, 1] ->
+            [batch_size, num_sampled] -> [batch_size] '''
         sum_log_sampled = t.bmm(noise, input.unsqueeze(2)).sigmoid().log().sum(1).squeeze()
 
         loss = log_target + sum_log_sampled
