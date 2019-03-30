@@ -30,8 +30,8 @@ class Decoder(nn.Module):
                  final rnn state with shape of [num_layers, batch_size, decoder_rnn_size]
         """
 
-        assert parameters_allocation_check(self), \
-            'Invalid CUDA options. Parameters should be allocated in the same memory'
+        # assert parameters_allocation_check(self), \
+        #     'Invalid CUDA options. Parameters should be allocated in the same memory'
 
         [batch_size, seq_len, _] = decoder_input.size()
 
